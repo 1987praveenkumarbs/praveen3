@@ -3,3 +3,4 @@ df -Ph| awk '{gsub("%","",$0);print }'| awk 'BEGIN{print "Below are partitions e
 echo "======================"
 echo "ppppp"
 echo "uuuuuu"
+echo "----------------"
