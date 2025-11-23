@@ -2,3 +2,4 @@
 df -Ph| awk '{gsub("%","",$0);print }'| awk 'BEGIN{print "Below are partitions exceeding greater than 70%"}NR>1 && ($(NF-1) > 70){print $NF}'
 echo "======================"
 echo "ppppp"
+echo "uuuuuu"
