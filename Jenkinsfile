@@ -1,7 +1,7 @@
 pipeline{
   agent any
   stages{
-    stage1("stage1"){
+    stage1("test"){
       steps{
         sh 'git log --oneline'
       }
