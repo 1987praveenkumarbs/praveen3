@@ -5,11 +5,11 @@ pipeline{
       steps{
         sh("git log --oneline")
       }
+    }  
     stage("step2"){
       steps{
         sh ("git diff HEAD~1 HEAD")
       }  
     }   
-    }
   }
 } 
