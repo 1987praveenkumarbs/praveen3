@@ -1,12 +1,11 @@
 pipeline{
   agent any
   stages{
-    stage1("build"){
-      steps {
-       sh 'git log --oneline'
-      }  
-    }   
+    stage1("stage1"){
+      steps{
+        sh 'git log --oneline'
+      }
+    }
   }
-}  
-  
-  
+}
+ 
