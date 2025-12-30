@@ -6,7 +6,7 @@ pipeline{
         sh ("uname;uptime")
         sh ("df -h")
         script{
-          def kout=sh(script: /tmp/ml.sh,returnStdout: true)
+          def kout=sh(script: "sh /tmp/ml.sh",returnStdout: true)
           echo "${kout}"
           if ("${kout}" -gt 10){
               echo "Issue exsists"
