@@ -8,7 +8,7 @@ pipeline{
         script{
           def kout=sh(script: /tmp/ml.sh,returnStdout: true)
           echo "${kout}"
-          if ("${kout} -gt 10){
+          if ("${kout}" -gt 10){
               echo "Issue exsists"
           }
           else{
