@@ -18,5 +18,14 @@ pipeline{
         }
       }
     }
+    stage("git operation"){
+      when{
+        changeset "dec1"
+      } 
+      steps{
+        echo "Changes foud on file dec1"
+      }
+    }  
+        
   }
 }
