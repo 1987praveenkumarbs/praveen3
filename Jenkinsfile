@@ -1,7 +1,7 @@
 pipeline{
   agent any
   stages{
-    stage("test")
+    stage("test"){
       steps{
         sh ("uname;uptime")
         sh ("df -h")
@@ -16,7 +16,6 @@ pipeline{
           }
         }
       }
-    
     }
   }
 } 
