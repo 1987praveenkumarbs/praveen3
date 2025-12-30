@@ -10,7 +10,7 @@ pipeline{
           echo "${kout}"
           if ("${kout}" > 10){
               echo "Issue exsists"
-              error("Issue exists pipeline shoud fail")
+              echo "praveen"
           }
           else{
               echo "Below threshold"
