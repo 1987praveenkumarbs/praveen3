@@ -3,7 +3,7 @@ pipeline{
   stages{
     stage("test")
       steps{
-        sh ("uname")
+        sh ("uname;uptime")
         sh ("df -h")
         script{
           def kout=sh(script: /tmp/ml.sh,returnStdout: true)
