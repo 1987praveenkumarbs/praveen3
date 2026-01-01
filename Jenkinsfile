@@ -13,6 +13,7 @@ pipeline{
                 script{
                     def kout=sh(script:"git diff --name-only HEAD~1 HEAD",returnStdout: true)
                     echo "${kout}"
+                }    
             }
 
         }
