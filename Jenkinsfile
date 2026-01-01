@@ -9,7 +9,7 @@ pipeline{
         stage("test2"){
             steps{
                 sh("git branch")
-                sh("git log --oneline")
+                sh("git diff HEAD~1 HEAD")
             }
 
         }
