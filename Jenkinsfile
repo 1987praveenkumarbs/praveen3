@@ -15,6 +15,7 @@ pipeline{
                     echo "${kout}"
                     if ("${kout}" == "dec1"){
                         echo "Changes found"
+                        error("Changes found it should fail")
                     }
                     else{
                         echo "Changes found in different file"
