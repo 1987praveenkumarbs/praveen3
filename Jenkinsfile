@@ -13,6 +13,12 @@ pipeline{
                 script{
                     def kout=sh(script:"git diff --name-only HEAD~1 HEAD",returnStdout: true)
                     echo "${kout}"
+                    if ("${kout}" == "dec1"){
+                        echo "Changes found"
+                    }
+                    else{
+                        echo "Changes found in different file"
+                    }    
                 }    
             }
 
