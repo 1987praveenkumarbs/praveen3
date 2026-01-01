@@ -8,8 +8,8 @@ pipeline{
         }
         stage("test2"){
             steps{
-                git branch
-                git log --oneline
+                sh("git branch")
+                sh("git log --oneline")
             }
 
         }
