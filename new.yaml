@@ -6,3 +6,9 @@
        shell:
          "uptime"
        register: uptss
+     - name: displaying output
+       debug:
+         msg: "{{ uptss }}"
+
+
+       
