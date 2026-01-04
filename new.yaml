@@ -1,0 +1,8 @@
+---
+ - hosts: localhost
+   become: yes
+   tasks:
+     - name: executing uptime
+       shell:
+         "uptime"
+       register: upt
