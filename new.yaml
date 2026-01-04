@@ -4,10 +4,10 @@
      - name: executing uptime
        shell:
          "uptime"
-       register: uptss
+       register: uptsss
      - name: displaying output
        debug:
-         msg: "{{ uptss }}"
+         msg: "{{ uptsss }}"
 
 
        
