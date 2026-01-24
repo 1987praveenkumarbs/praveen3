@@ -12,6 +12,7 @@ pipeline{
         stage("dev"){
             when{
                 changeset "dec1"
+                changeset 
             }
             steps{
                 echo "Change found in dec1 file"
@@ -19,7 +20,11 @@ pipeline{
         }
         stage("prd"){
             when{
-                changeset "dec1"
+                anyof{
+                    changeset "dec1"
+                    changeset "dec2"
+                }
+                
             }
             steps{
                 sh("sudo yum install python3-pip* -y")
