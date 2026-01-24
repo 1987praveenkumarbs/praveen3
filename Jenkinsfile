@@ -12,7 +12,6 @@ pipeline{
         stage("dev"){
             when{
                 changeset "dec1"
-                changeset 
             }
             steps{
                 echo "Change found in dec1 file"
