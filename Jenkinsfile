@@ -20,7 +20,7 @@ pipeline{
         }
         stage("prd"){
             when{
-                anyof{
+                anyOf{
                     changeset "dec1"
                     changeset "dec2"
                 }
