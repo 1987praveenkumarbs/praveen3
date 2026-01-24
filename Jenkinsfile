@@ -2,6 +2,9 @@ pipeline{
     agent any
     stages{
         stage("test"){
+            when{
+                changeset "dec1"
+            }
             steps{
                 sh("uname")
             }
@@ -15,6 +18,9 @@ pipeline{
             }
         }
         stage("prd"){
+            when{
+                changeset "dec1"
+            }
             steps{
                 sh("sudo yum install python3-pip* -y")
                 sh("sudo pip --version")
