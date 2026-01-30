@@ -1,0 +1,12 @@
+---
+ - hosts: localhost
+   ignore_errors: yes
+   tasks:
+      - name: installing the application
+        shell:
+          "who|wc -l"
+        register: usr_logg
+
+      - name: displaying details
+        debug:
+          msg: "{{ usr_logg }}"
