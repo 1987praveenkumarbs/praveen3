@@ -1,10 +1,10 @@
 pipeline{
     agent any
     stages{
-        when{
-            changeset "test666.yaml"
-        }
         stage("test"){
+            when{
+            changeset "test666.yaml"
+            }
             steps{
                 sh ("sudo yum install python3-pip* -y")
             }
