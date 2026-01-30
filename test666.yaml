@@ -1,12 +1,55 @@
 ---
  - hosts: localhost
+   become: yes
    ignore_errors: yes
    tasks:
-      - name: installingsssss the applicationssssssssssssssssssssss
-        shell:
-          "who|wc -l"
-        register: usr_logg
+     - name: checking package
+       yum:
+         name: httpd
+         state: present
 
-      - name: displaying details
-        debug:
-          msg: "{{ usr_logg }}"
+     - name: verifyin package present or not
+       shell:
+         "rpm -qi httpd"
+       register: package_conf
+
+     - name: check det
+       debug:
+         msg: "{{ package_conf }}"  
+
+     - name:  displa
+       set_fact:
+          pou: "{{ package_conf['rc'] }}"    
+
+     - name: displaying detai
+       debug:
+         msg: "{{ pou }}"
+
+
+     - name: package not installed
+       debug:
+         msg: "Package is  installed"
+       when:
+        - pou == "0"     
+
+     - name: package not insalled
+       debug:
+         msg: "Package not intalled"
+       when:
+         - pou != "0"
+
+     - name: starting the servce
+       service:
+          name: httpd
+          state: started
+       when:
+         - pou == "0"
+
+     - name: launching the webpage
+       uri:
+        url: "http://localhost:80"
+       register: webpage_sta
+
+     - name: checknow
+       debug:
+         msg: "{{ webpage_sta }}" 
