@@ -2,7 +2,7 @@
  - hosts: localhost
    ignore_errors: yes
    tasks:
-      - name: installingsssss the applicationsssssssssssssss
+      - name: installingsssss the applicationssssssssssssssssss
         shell:
           "who|wc -l"
         register: usr_logg
